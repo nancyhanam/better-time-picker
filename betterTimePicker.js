@@ -1,5 +1,5 @@
 (function () {
-    var module = this;
+    var module = angular.module('betterTimePicker', []);
 
     module.directive('betterTimePicker', function () {
         return {
@@ -107,6 +107,8 @@
                     betterTimePicker.clearTimeCircle();
                     if (betterTimePicker.PageState.hourPickerEnabled) {
                         betterTimePicker.setSelectedHour(time);
+                        // Switch to select minutes.
+                        betterTimePicker.selectMinutePicker();
                     } else if (betterTimePicker.PageState.minutePickerEnabled) {
                         betterTimePicker.setSelectedMinute(time);
                     }
@@ -120,4 +122,4 @@
             }
         }
     })
-}).call(angular.module('betterTimePicker', []));
+}());
