@@ -15,10 +15,10 @@
 
             controller: function ($scope) {
                 var betterTimePicker = this;
-                betterTimePicker.initializeTime = function (date) {
+                betterTimePicker.initializeTime = function () {
                     betterTimePicker.PageState = {};
                     betterTimePicker.PageState.times = [];
-                    var currentDate = date;
+                    var currentDate = this.date;
                     if (!currentDate) {
                         currentDate = new Date();
                     } else if (typeof date == "string") {
@@ -28,8 +28,6 @@
                         selectedDate: currentDate
                     };
 
-                    betterTimePicker.setSelectedHour(currentDate.getHours());
-                    betterTimePicker.setSelectedMinute(currentDate.getMinutes());
                     betterTimePicker.selectHourPicker();
                 };
 
