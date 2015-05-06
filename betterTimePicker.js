@@ -61,7 +61,7 @@
           var items = 12;
           for(var i = 0; i < items; i++) {
             var x = 60 + 104 * Math.cos(2 * Math.PI * i / items - (Math.PI/2)),
-            y = 60 - 12 + 104 * Math.sin(2 * Math.PI * i / items - (Math.PI/2)),
+            y = 60 + 104 * Math.sin(2 * Math.PI * i / items - (Math.PI/2)),
             value = i *5;
             betterTimePicker.PageState.times.push({x: x, y:y, value: value});
           }
