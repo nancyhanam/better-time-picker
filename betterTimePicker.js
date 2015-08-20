@@ -102,6 +102,22 @@
                     betterTimePicker.UserSelection.selectedDate.setMinutes(minute);
                 };
 
+
+                betterTimePicker.checkSelected = function (timeValue) {
+                    if (betterTimePicker.PageState.hourPickerEnabled){
+                        var hour = betterTimePicker.UserSelection.selectedDate.getHours();
+                        if(hour > 12) {
+                            hour -= 12;
+                        }
+                        return hour === timeValue;
+                    }
+
+                    if (betterTimePicker.PageState.minutePickerEnabled) {
+                        return betterTimePicker.UserSelection.selectedDate.getMinutes() ===
+                            timeValue;
+                    }
+                };
+
                 betterTimePicker.setSelectedTime = function (time) {
                     betterTimePicker.hideAfterSelection &&
                     betterTimePicker.clearTimeCircle();
