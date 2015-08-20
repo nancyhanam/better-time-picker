@@ -28,7 +28,8 @@
     <div
       ng-click="betterTimePicker.setSelectedTime(hour.value)"
       ng-repeat="timeUnit in betterTimePicker.PageState.times"
-      ng-class="{'hour': hourPickerEnabled, 'minute': minutePickerEnabled, 'second': secondPickerEnabled}"
+      ng-class="{'hour': hourPickerEnabled, 'minute': minutePickerEnabled, 'second': secondPickerEnabled,
+                 'selected': betterTimePicker.checkSelected(timeUnit.value)}"
       class="hour"
       style="left:{{timeUnit.x}}px; top:{{timeUnit.y}}px;">{{timeUnit.value}}
     </div>
